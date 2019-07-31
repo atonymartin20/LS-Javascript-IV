@@ -11,10 +11,10 @@
 // ```js
 // const fred = new Instructor({
 //   name: 'Fred',
-//   location: 'Bedrock',
 //   age: 37,
-//   favLanguage: 'JavaScript',
+//   location: 'Bedrock',
 //   specialty: 'Front-end',
+//   favLanguage: 'JavaScript',
 //   catchPhrase: `Don't forget the homies`
 // });
 // ```
@@ -107,3 +107,79 @@ class ProjectManager extends Instructor {
 }
 
 
+const abdiel = new Student({
+    name: 'Abdiel Fernandez',
+    age: 22,
+    location: 'East Coast',
+    previousBackground: 'Java',
+    className: 'CSPT2',
+    favSubjects: ['Batman', 'Superman', 'Flash'],
+    grade: 80,
+})
+
+const eric = new Student({
+    name: 'Eric Whitcomb',
+    age: 33,
+    location: 'Mountain Time',
+    previousBackground: 'unknown',
+    className: 'CSPT2',
+    favSubjects: ['Helping others', 'Petting Dogs', 'Growing a Great Beard'],
+    grade: 90,
+})
+
+const brendon = new Student({
+    name: 'Brendon Kutz',
+    age: 25,
+    location: 'Central Time',
+    previousBackground: 'unknown',
+    className: 'CSPT2',
+    favSubjects: ['group', 'of', 'arrays'],
+    grade: 55,
+})
+
+const chris = new ProjectManager({
+    name: 'Chris Atoki',
+    age: 27,
+    location: 'East Coast',
+    specialty: 'helping newbies',
+    favLanguage: 'JS',
+    catchPhrase: 'Please put your favorite emoji on this message.',
+    gradClassName: 'CS3',
+    favInstructor: 'Dan',
+})
+
+const moises = new ProjectManager({
+    name: 'Moises Dobarganes',
+    age: 25,
+    location: 'East Coast',
+    specialty: 'Getting hired by Google',
+    favLanguage: 'JS',
+    catchPhrase: 'Do a little dance',
+    gradClassName: 'unknown',
+    favInstructor: 'Dan',
+})
+
+const dan = new Instructor({
+    name: 'Dan Frehner',
+    age: 30,
+    location: 'West Coast',
+    specialty: 'Growing a great beard',
+    favLanguage: 'JS',
+    catchPhrase: 'It is turtle time',
+})
+
+console.log(abdiel);
+console.log(eric);
+console.log(dan);
+console.log(chris);
+abdiel.listsSubjects();
+dan.grade(abdiel, 'Javascript');
+chris.demo('JavaScript');
+moises.debugsCode(eric, 'Potato.pancake');
+brendon.speak();
+abdiel.PRAssignment('javascript');
+eric.sprintChallenge('JS IV');
+chris.standUp('Number 1');
+// eric.graduate();
+// dan.changeGrade(brendon);
+// chris.changeGrade(brendon);
