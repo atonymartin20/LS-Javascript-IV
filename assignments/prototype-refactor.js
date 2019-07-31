@@ -138,9 +138,10 @@ class Humanoid extends CharacterStats {
     // * Create two new objects, one a villain and one a hero and fight it out with methods!
     
 class Villian extends Humanoid {
-    constructor(VillianAttributes) {
-        super(VillianAttributes);
-    }
+    // No need for constructor and super b/c no variables inside
+    // constructor(VillianAttributes) {
+    //     super(VillianAttributes);
+    // }
     backStab(hero) {
         if (this.healthPoints <= 0) {
             return(`${this.name} has been defeated in battle and can not attack.`);
@@ -159,9 +160,10 @@ class Villian extends Humanoid {
 }
 
   class Hero extends Humanoid {
-    constructor(HeroAttributes) {
-        super(HeroAttributes);
-    }
+    // No need for constructor and super b/c no variables inside
+    // constructor(HeroAttributes) {
+    //     super(HeroAttributes);
+    // }
     lunge(villian) {
         if (this.healthPoints <= 0) {
             return(`${this.name} has been defeated in battle and can not attack.`);
