@@ -53,6 +53,28 @@ class Instructor extends Person {
     grade(student, subject) {
         console.log(`${student.name} receives a perfect score on ${subject}.`)
     }
+    changeGrade(student) {
+        let gradeBeforeChange = student.grade;
+        let gradeChangeResult = '';
+        const changeFormula = Math.floor(Math.random() * 20);
+        const PositiveOrNegative = Math.floor(Math.random() * 100);
+        if (PositiveOrNegative % 2 === 0) {
+            gradeChangeResult = 'grade increased';
+            student.grade += changeFormula;
+        }
+
+        else {
+            gradeChangeResult = 'grade decreased';
+            student.grade -= changeFormula;
+        }
+
+        const gradeDifference = Math.abs(student.grade - gradeBeforeChange);
+        console.log(`${student.name}'s ${gradeChangeResult} by ${gradeDifference} to ${student.grade}`)
+
+        if(student.grade > 70) {
+            student.graduate();
+        }
+    }
     // * Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
 
 }
@@ -82,9 +104,18 @@ class Student extends Person {
     sprintChallenge(subject) {
         console.log(`${this.name} has begun sprint challenge on ${subject}`);
     }
-// * Add a graduate method to a student.
-//   * This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
-//   * If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
+    graduate() {
+        //   * This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
+        //   * If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
+        if(this.grade > 70) {
+            console.log(`${this.name} is ready to graduate.`);
+            return this.grade
+        }
+        else {
+            console.log(`${this.name} is not yet ready to graduate.`);
+            return this.grade
+        }
+    }
 }
 
 // #### Project Manager
@@ -180,6 +211,7 @@ brendon.speak();
 abdiel.PRAssignment('javascript');
 eric.sprintChallenge('JS IV');
 chris.standUp('Number 1');
-// eric.graduate();
-// dan.changeGrade(brendon);
-// chris.changeGrade(brendon);
+eric.graduate();
+brendon.graduate();
+dan.changeGrade(brendon);
+chris.changeGrade(brendon);
